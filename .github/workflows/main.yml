@@ -23,5 +23,5 @@ jobs:
           username: ${{ secrets.UNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.TEST_PRIVATE }}
-          source: "path/to/your/file.txt" # Adjust the source path to the file you want to copy
-          target: "~/path/to/target/directory" # Adjust the target
+          source: "."
+          target: "/home/ubuntu/test"

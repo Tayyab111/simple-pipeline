@@ -1,0 +1,27 @@
+name: Copy File to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the latest code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Copy a specific file to the server
+      - name: Copy file via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "path/to/your/file.txt" # Adjust the source path to the file you want to copy
+          target: "~/path/to/target/directory" # Adjust the target

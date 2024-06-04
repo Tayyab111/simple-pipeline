@@ -1,4 +1,0 @@
-hi, this the ci/cd pipeline
-push the code
-this is third lien
-I am writing 4th line of testing.

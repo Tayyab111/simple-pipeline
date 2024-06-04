@@ -17,7 +17,7 @@ jobs:
       - name: Copy file via SCP
         uses: appleboy/scp-action@master
         with:
-          source: "path/to/your/file.txt"  # Update with your filename
+          source: "."  # Update with your filename
           target: "/home/ubuntu/test"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.UNAME }}

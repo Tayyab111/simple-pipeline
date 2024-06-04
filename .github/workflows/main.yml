@@ -32,6 +32,9 @@ jobs:
           username: ${{ secrets.UNAME }}
           key: ${{ secrets.TEST_PRIVATE }}
           port: ${{ secrets.PORT }}
+          source: "."
+          target: "/home/ubuntu/test"
+
           script: |
             whoami
             ls -al

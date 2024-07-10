@@ -9,22 +9,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the latest code
+      
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Copy a specific file to the server
+      
       - name: Copy file via SCP
         uses: appleboy/scp-action@master
         with:
-          source: "."  # Update with your filename
+          source: "."
           target: "/home/ubuntu/test"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.UNAME }}
           key: ${{ secrets.TEST_PRIVATE }}
           port: ${{ secrets.PORT }}
 
-      # Execute script on the server (separate step)
+     
       - name: Run server tasks
         uses: appleboy/ssh-action@v1.0.3
         with:
